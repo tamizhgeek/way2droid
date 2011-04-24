@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/ScrollView01"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+<LinearLayout 
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" 
+  android:padding="10px">
+  	<RelativeLayout
+    android:gravity="center_vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+	    <TextView
+	      android:textSize="10pt"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:text="Username:"
+	      android:id="@+id/usernamelabel"
+	      android:layout_weight="0" />
+		 <EditText
+		      android:id="@+id/txtusername"
+		      android:layout_alignBaseline="@id/usernamelabel"
+		      android:layout_alignParentRight="true"
+		      android:layout_width="fill_parent"
+		      android:layout_height="wrap_content" />
+ 	</RelativeLayout>
+  	
+  	<TextView
+   		android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Your Way2SMS username/phone number" />
+	 <ImageView
+	    android:layout_gravity="center_horizontal"
+	    android:paddingTop="10px"
+	    android:paddingBottom="10px"
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:src="@android:drawable/divider_horizontal_dim_dark" />
+  	  	<RelativeLayout
+		    android:gravity="center_vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    <TextView
+		      android:textSize="10pt"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:text="Password:"
+		      android:id="@+id/passwordlabel" />
+		    <EditText
+		      android:id="@+id/txtpassword"
+		      android:layout_alignBaseline="@id/passwordlabel"
+		      android:layout_alignParentRight="true"
+		      android:layout_height="wrap_content"
+		      android:layout_width="fill_parent" 
+		      android:inputType="textPassword"/>
+ 	</RelativeLayout>
+  	
+  	<TextView
+   		android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Your Way2SMS Password" />
+	 <ImageView
+	    android:layout_gravity="center_horizontal"
+	    android:paddingTop="10px"
+	    android:paddingBottom="10px"
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:src="@android:drawable/divider_horizontal_dim_dark" />
+	    
+	 <RelativeLayout
+		    android:gravity="center_vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    <TextView
+		      android:textSize="10pt"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:text="Log Sent"
+		      android:id="@+id/logsentlabel" />
+		    <CheckBox
+		    	android:id="@+id/chklogsent"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text=""
+		        android:layout_alignBaseline="@id/logsentlabel"
+		      	android:layout_alignParentRight="true" />
+ 	</RelativeLayout>
+  	
+  	<TextView
+   		android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Log Sent Messages in Stock SMS" />
+	 <ImageView
+	    android:layout_gravity="center_horizontal"
+	    android:paddingTop="10px"
+	    android:paddingBottom="10px"
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:src="@android:drawable/divider_horizontal_dim_dark" />
+	    
+	 <RelativeLayout
+		    android:gravity="center_vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    <TextView
+		      android:textSize="10pt"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:text="Send in Background"
+		      android:id="@+id/bglabel" />
+		    <CheckBox
+		    	android:id="@+id/chkbg"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text=""
+		        android:layout_alignBaseline="@id/bglabel"
+		      	android:layout_alignParentRight="true" />
+ 	</RelativeLayout>
+  	
+  	<TextView
+   		android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="Send Messages in the Background (Don't block the UI)" />
+	 <ImageView
+	    android:layout_gravity="center_horizontal"
+	    android:paddingTop="10px"
+	    android:paddingBottom="20px"
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:src="@android:drawable/divider_horizontal_dim_dark" />
+	    
+	 <Button
+  		android:id="@+id/btnSave"
+       	android:layout_width="fill_parent"
+      	android:layout_height="wrap_content"
+      	android:text="Save"
+      	/>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+		<TableLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:paddingTop="5px" >
+		    <TableRow>
+		    	<TextView
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="Tap on the number to assign Speed Dial!"
+					android:paddingBottom="10px"
+					android:paddingLeft="10px" />
+		    </TableRow>
+		    <TableRow>
+		    	<Button 
+		    		android:id="@+id/dial1"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.33"
+		    		android:text="1" />
+		    	<Button 
+		    		android:id="@+id/dial2"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.34"
+		    		android:text="2" />
+		    	<Button 
+		    		android:id="@+id/dial3"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.33"
+		    		android:text="3" />
+		    </TableRow>
+		    <TableRow>
+		    	<Button 
+		    		android:id="@+id/dial4"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.33"
+		    		android:text="4" />
+		    	<Button 
+		    		android:id="@+id/dial5"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.34"
+		    		android:text="5" />
+		    	<Button 
+		    		android:id="@+id/dial6"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.33"
+		    		android:text="6" />
+		    </TableRow>
+		    <TableRow>
+		    	<Button 
+		    		android:id="@+id/dial7"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.33"
+		    		android:text="7" />
+		    	<Button 
+		    		android:id="@+id/dial8"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.34"
+		    		android:text="8" />
+		    	<Button 
+		    		android:id="@+id/dial9"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:layout_weight="0.33"
+		    		android:text="9" />
+		    </TableRow>
+		    <TableRow android:paddingTop="30px">
+		    	<Button 
+		    		android:id="@+id/SaveDial"
+		    		android:layout_width="0px"
+		    		android:layout_height="wrap_content"
+		    		android:text="Done!"
+		    		android:layout_weight="1" />
+		    </TableRow>
+	</TableLayout>
+</ScrollView> 
