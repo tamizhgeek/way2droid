@@ -1,10 +1,13 @@
 package com.foamsnet.way2droid;
 
 import java.net.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.io.*;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -28,10 +31,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 class AboutDialogBuilder {
 	public static AlertDialog create( Context context ) throws NameNotFoundException {
@@ -221,11 +228,20 @@ public class Way2SMS extends Activity implements OnClickListener {
     	  					}
     	  					phones.close();
     	  				}
+    	  				
     	  				EditText txtdest = (EditText) findViewById(R.id.txtdest);
     	  				txtdest.setText(name + ":" + phoneNumber);
     	  			}
     	  			break;
     	  		}
+    		case(34):
+    			if (resultCode == Activity.RESULT_OK)
+    			{
+    	  				EditText txtdest = (EditText) findViewById(R.id.txtdest);
+    	  				txtdest.setText(data.getStringExtra("name")+ ":" +data.getStringExtra("number"));
+   	  			
+    			}
+    		break;
     	  }
     }
     
@@ -240,13 +256,28 @@ public class Way2SMS extends Activity implements OnClickListener {
         inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
+    
+    
 
-	@Override
+    
+	//@Override
 	public void onClick(View v) {
+		SharedPreferences settings = getApplicationContext().getSharedPreferences("Way2Droid", Context.MODE_PRIVATE);
+		boolean simcontactschk = settings.getBoolean("simcontactschk", false);
 		if(v.equals(findViewById(R.id.btnPick)))
 		{
-			Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-			startActivityForResult(intent, 0);
+			if(simcontactschk)
+			{
+				
+				Intent intent = new Intent(this, ContactActivity.class);
+				startActivityForResult(intent, 34);		
+			}
+			else
+			{
+				Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+				startActivityForResult(intent, 0);
+			}
+			
 		}
 		else if(v.equals(findViewById(R.id.btnSend)))
 		{
@@ -255,7 +286,7 @@ public class Way2SMS extends Activity implements OnClickListener {
 				show("You cannot send messages without Internet access! Please enable mobile data or wifi and try again!");
 				return;
 			}
-			SharedPreferences settings = getApplicationContext().getSharedPreferences("Way2Droid", Context.MODE_PRIVATE);
+			//SharedPreferences settings = getApplicationContext().getSharedPreferences("Way2Droid", Context.MODE_PRIVATE);
 			String username = settings.getString("username", "-1");
 			String password = settings.getString("password", "-1");
 			if(username.equalsIgnoreCase("-1") || password.equalsIgnoreCase("-1"))

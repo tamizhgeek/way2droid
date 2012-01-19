@@ -70,7 +70,7 @@ public class SpeedDial extends Activity implements OnClickListener {
 		alert.show();
 	}
     
-	@Override
+	//@Override
 	public void onClick(View v) {
 		switch(v.getId())
 		{

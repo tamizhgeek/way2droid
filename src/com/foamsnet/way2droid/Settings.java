@@ -23,6 +23,7 @@ public class Settings extends Activity implements OnClickListener
         ((EditText)findViewById(R.id.txtpassword)).setText(settings.getString("password", ""));
         ((CheckBox)findViewById(R.id.chklogsent)).setChecked(settings.getBoolean("logsent", true));
         ((CheckBox)findViewById(R.id.chkbg)).setChecked(settings.getBoolean("bgsend", false));
+        ((CheckBox)findViewById(R.id.simcontactschk)).setChecked(settings.getBoolean("simcontactschk", false));
         
     }
 	
@@ -31,7 +32,7 @@ public class Settings extends Activity implements OnClickListener
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
     }
 
-	@Override
+	//@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(v.equals(findViewById(R.id.btnSave)))
@@ -43,6 +44,7 @@ public class Settings extends Activity implements OnClickListener
 			editor.putString("password", ((EditText)findViewById(R.id.txtpassword)).getText().toString());
 			editor.putBoolean("logsent", ((CheckBox)findViewById(R.id.chklogsent)).isChecked());
 			editor.putBoolean("bgsend", ((CheckBox)findViewById(R.id.chkbg)).isChecked());
+			editor.putBoolean("simcontactschk", ((CheckBox)findViewById(R.id.simcontactschk)).isChecked());
 			editor.commit();
 			show("Settings Saved!");
 			this.finish();
