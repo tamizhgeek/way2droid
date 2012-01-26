@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, Way2SMS!</string>
     <string name="app_name">Way2Droid</string>
+    <string name="search_hint">Search SIM contacts</string>
 </resources>
